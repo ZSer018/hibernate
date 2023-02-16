@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE hibernate-mapping PUBLIC
+        "-//Hibernate/Hibernate Mapping DTD//EN"
+        "http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
+
+<hibernate-mapping xmlns="http://www.hibernate.org/xsd/hibernate-mapping">
+
+    <class name = "z.hibernate.entities.Account" table = "Account">
+
+        <id name = "accountNumber"  column = "account_num" type = "string"/>
+
+        <property name = "moneyAvailable"  column = "available_amount" type = "int"/>
+
+        <property name = "currencyType" column = "acc_type" type = "string"/>
+
+        <many-to-one name="person" column="person_id"
+                     class="z.hibernate.entities.Person"
+                     cascade="save-update"/>
+    </class>
+</hibernate-mapping>
+

@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE hibernate-mapping PUBLIC
+        "-//Hibernate/Hibernate Mapping DTD//EN"
+        "http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
+
+<hibernate-mapping xmlns="http://www.hibernate.org/xsd/hibernate-mapping">
+
+    <class name = "z.hibernate.entities.Address" table = "Address">
+
+        <id name = "personId"  column = "person_id" type = "int"/>
+
+        <property name = "address"  column = "address" type = "String"/>
+
+        <set name="personList" table="Person">
+               <key column="person_id"/>
+               <one-to-many class="z.hibernate.entities.Person"/>
+        </set>
+    </class>
+</hibernate-mapping>
